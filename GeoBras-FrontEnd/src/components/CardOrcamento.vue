@@ -1,0 +1,73 @@
+<script setup lang="ts">
+import type { Orcamento } from '@/interfaces/Orcamento';
+import { type PropType } from 'vue';
+import { deleteOrcamento } from '@/service/api';
+defineProps({
+    orcamento: {
+        type: Object as PropType<Orcamento>,
+        required: true
+    }
+})
+</script>
+
+<template>
+    <div style="width: 100% ;">
+
+        <div class="card h-80 shadow border-0">
+          <div style="width: 100%; font-size: 1.1rem;" >
+            <h6 class="card-title fw-bold " style="margin-bottom: 5px;justify-self: start;">Nome - {{orcamento.nomeOrcamento}}</h6>
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+            <p class="text small mb-0">
+              <i class="bi bi-person "> Id - {{ orcamento.idOrcamento }}</i>
+            </p>
+            </div>
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+              <p class="text small mb-0">
+              <i class="bi bi-truck "> Deslocamento - R${{ orcamento.deslocamento }}</i>
+            </p>
+            </div>
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+              <p class="text small mb-0">
+              <i class="bi bi-hammer "> Mão de obra - R${{ orcamento.maoDeObra }}</i>
+            </p>
+            </div>
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+              <p class="text small mb-0">
+              <i class="bi bi-mortarboard "> Serviço - {{ orcamento.servico }}</i>
+            </p>
+            </div>
+            
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+              <p class="text small mb-0">
+              <i class="bi bi-cash "> Imposto - {{ orcamento.imposto }}%</i>
+            </p>
+            </div>
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;">
+              <p class="text small mb-0">
+              <i class="bi bi-cash "> Soma dos Materiais  R$ {{ orcamento.somaMateriais }}</i>
+            </p>
+            </div>
+            
+            
+            <div style="margin-bottom: 5px;justify-content: start; display: flex;border-bottom: 1px solid #ccc; padding-bottom: 15px;">
+              <p class="text small mb-0">
+              <i class="bi bi-cash "> Aluguel de equipamento - R$ {{ orcamento.aluguelDeEquipamento }}</i>
+            </p>
+            </div>
+
+            <div style="justify-content: start; display: flex;">
+              <p class="text medium mb-0">
+              <i class="bi bi-cash "> Orçamento total  R$ {{ orcamento.orcamentoTotal }}</i>
+            </p>
+            </div>
+
+            <div style="justify-content: start; display: flex;">
+              <RouterLink :to="`/alterar-orcamento/${orcamento.idOrcamento}`" class="btn btn-primary btn-lg mt-2 " type="button">Alterar</RouterLink>
+            </div>
+            
+              
+          </div>
+        </div>
+    </div>
+
+</template>
