@@ -83,6 +83,14 @@ function toggleTheme() {
               Clientes
             </RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink
+              class="nav-link"
+              to="/drive"
+            >
+              Drive
+            </RouterLink>
+          </li>
         </ul>
       </div>
     </div>
