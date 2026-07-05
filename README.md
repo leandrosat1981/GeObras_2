@@ -1,7 +1,7 @@
 # GeoBras
 
 ---
-# Integrantes
+# Primeiros integrantes
 - Rodrigo Luiz
 - Davi Ávila
 - Davi Martins
