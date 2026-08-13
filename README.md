@@ -37,3 +37,12 @@ Projeto para gestão de obras
 - Alinhamento com a equipe
 
 
+# step by step
+
+- alterado applicaton.properties para criar banco no SQL server
+- alterado pow.xml para incluir a dependencia do sql server
+- instalar java sdk 21 
+- fazer o clone local  git clone https://github.com/j0aov1t0r18/GeObras_2.git 
+- Rodar o backend : .\mvnw.cmd spring-boot:run
+
+
